@@ -39,8 +39,8 @@ void ACV_ImageReader::BeginPlay()
 	Super::BeginPlay();
 
 #if PLATFORM_WINDOWS
-	FString ContentPath = FPaths::ProjectContentDir();
-	FString TestImgPath = FPaths::Combine(ContentPath, TEXT("TestRes/test.png"));
+	FString ContentPath = FPaths::ProjectPluginsDir() + TEXT("OpenCV_Plugin/Content/Asset/Texture");
+	FString TestImgPath = FPaths::Combine(ContentPath, TEXT("LittlePig.png"));
 	IPlatformFile& PlatformFile = FPlatformFileManager::Get().GetPlatformFile();
 	if (!PlatformFile.FileExists(*TestImgPath))
 	{
